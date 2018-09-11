@@ -114,7 +114,7 @@ Section parametric.
       match a in vector n
             return forall b : vector n, {a = b} + {a <> b}
       with
-      | Vnil => fun b => left match b in vector 0 with
+      | Vnil => fun b => left match b in vector 0 return Vnil = b with
                                 | Vnil => eq_refl
                                 end
       | Vcons _ a a' => fun b =>
